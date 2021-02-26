@@ -1,4 +1,4 @@
-####<<<<<< Requirements >>>>>>#####
+## Requirements
 
 **You have to install python3 and pip3 commands
 
@@ -16,7 +16,7 @@ pip3 install numpy
 
 
 
-####<<<<<<<<< How to use the application >>>>>>>>>####
+## How to use the application
 **All commands should be executed in terminal at the same directory as this file
 
 **First execute :
