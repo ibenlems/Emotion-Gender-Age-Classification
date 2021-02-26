@@ -21,9 +21,9 @@ pip3 install numpy
 
 * First execute :
 	
-	source ./bin/detector.sh
+	`` source ./bin/detector.sh ``
 	
 * Then , to get more information on how to use detector command:
 	
-	detector help
+	`` detector help ``
 	
