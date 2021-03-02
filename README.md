@@ -4,15 +4,7 @@
 
 * Then install all dependencies by executing the following commands :
 ```
-pip3 install tensorflow
-pip3 install opencv-python
-pip3 install mtcnn
-pip3 install facenet_pytorch
-pip3 install keras
-pip3 install PIL
-pip3 install time
-pip3 install imutils
-pip3 install numpy
+pip3 install -r requirements.txt
 ```
 
 
