@@ -13,7 +13,7 @@ sys.stderr = sys.stdout
 
 
 #############  Global variables  ############# 
-gender = ['Female','Male']
+gender = ['Woman','Man']
 emotion_dict = {
     0: 'Angry',
     1: 'Disgust', 
