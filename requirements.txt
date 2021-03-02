@@ -1,0 +1,9 @@
+tensorflow
+opencv-python
+mtcnn
+facenet_pytorch
+keras
+PIL
+time
+imutils
+numpy
