@@ -3,7 +3,6 @@ opencv-python
 mtcnn
 facenet_pytorch
 keras
-PIL
-time
+Pillow
 imutils
 numpy
