@@ -9,6 +9,8 @@ import sys
 import time
 import imutils
 from termcolor import colored
+
+#To print errors (but not warnings)
 sys.stderr = sys.stdout
 
 
