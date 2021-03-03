@@ -44,6 +44,7 @@ gender_model = load_model('./Models/simple_CNN.81-0.96.hdf5',compile=False)
 
 emotion_model = load_model('./Models/emotion_model2.h5')
 
+age_model = load_model('./Models/agemodel.h5')
 
 ############# Main Functions #############
 def rgb2gray(rgb):
@@ -75,7 +76,12 @@ def detect_face_py(img):
         center_img_k = img[top:top+max_border, 
                            left:left+max_border, :]
 
-        age_preds = 23
+        center_im_age = np.array(cv2.resize(
+            center_img_k, (age_model.input_shape[1:3])))
+        center_im_age = center_im_age.astype('float32')
+        center_im_age /= 255
+        center_im_age = np.expand_dims(center_im_age, 0)
+        age_preds = age_model.predict(center_im_age)[0]
 
         ####### Gender #########
         center_im_geneder = np.array(cv2.resize(center_img_k,(gender_model.input_shape[1:3])))
@@ -320,6 +326,3 @@ elif args[1]=='webcam' :
 	webcam_detector()
 else :
 	print("Wrong arguments were given, Try 'detector help' for more information ")
-	
-
-
