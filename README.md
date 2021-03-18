@@ -21,8 +21,8 @@ pip3 install -r requirements.txt
 	
 ## Techologies
 * Python version 3.8
-* Tensorflow \
-* Pytorch \
-* OpenCV \
-* Flask\
-* Heroku \
+* Tensorflow 
+* Pytorch 
+* OpenCV 
+* Flask
+* Heroku 
