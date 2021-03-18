@@ -25,6 +25,11 @@ pip3 install -r requirements.txt
 	
 	`` detector help ``
 	
+	
+	
+## Results
+<img src="data/results.png" width="750" />   
+
 ## Technologies
 * Python 
 * Tensorflow 
