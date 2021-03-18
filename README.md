@@ -20,7 +20,7 @@ pip3 install -r requirements.txt
 	`` detector help ``
 	
 ## Techologies
-* Python version 3.8
+* Python 
 * Tensorflow 
 * Pytorch 
 * OpenCV 
