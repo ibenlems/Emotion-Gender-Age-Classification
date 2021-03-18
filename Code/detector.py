@@ -30,14 +30,11 @@ emotion_dict = {
 args = sys.argv
 
 #############  load face detectors   ############# 
-detector = mtcnn.MTCNN()
 try :
   detector_py = MTCNN(select_largest=False,device='cuda')
 except :
   print(colored("<<<<<<<<<<<<< No GPU found >>>>>>>>>>>>>",'green'))
   detector_py = MTCNN()
-facecasc =cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
-
 
 ############# load models #############
 gender_model = load_model('./Models/simple_CNN.81-0.96.hdf5',compile=False)
@@ -100,56 +97,6 @@ def detect_face_py(img):
         return_res.append([top, right, bottom, left, gender_preds, age_preds, emotion_preds])
         
     return return_res
-
-
-def detect_face(img,use_mtcnn=True):
-
-    if use_mtcnn :
-      faces = detector.detect_faces(img)
-    else :
-      faces = facecasc.detectMultiScale(img,scaleFactor=1.3, minNeighbors=5)
-
-    return_res = []
-    
-    for face in faces:
-        if use_mtcnn :
-          x, y, width, height = face['box']
-        else :
-          x, y, width, height = face
-        center = [x+(width/2), y+(height/2)]
-        max_border = max(width, height)
-
-        # center alignment
-        left = max(int(center[0]-(max_border/2)), 0)
-        right = max(int(center[0]+(max_border/2)), 0)
-        top = max(int(center[1]-(max_border/2)), 0)
-        bottom = max(int(center[1]+(max_border/2)), 0)
-
-        # crop the face
-        center_img_k = img[top:top+max_border, 
-                           left:left+max_border, :]
-
-        age_preds = 23
-
-        ####### Gender #########
-        center_im_geneder = np.array(cv2.resize(center_img_k,(gender_model.input_shape[1:3])))
-        center_im_geneder = center_im_geneder.astype('float32')
-        center_im_geneder /=255
-        center_im_geneder = np.expand_dims(center_im_geneder, 0)
-        gender_preds = gender_model.predict(center_im_geneder)
-
-        ####### Emotion #########
-        grey_img = np.array(PIL.Image.fromarray(center_img_k).resize([48, 48]))
-        img_emotions = rgb2gray(grey_img).reshape(1, 48, 48, 1)       
-        img_emotions /= 255
-        emotion_preds = emotion_model.predict(img_emotions)
-        
-        # output to the cv2
-        return_res.append([top, right, bottom, left, gender_preds, age_preds, emotion_preds])
-        
-    return return_res
-  
-  
   
 ############# detection using webcam #############
 def webcam_detector() :
