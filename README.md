@@ -25,10 +25,8 @@ pip3 install -r requirements.txt
 	
 	`` detector help ``
 	
-## Techologies
+## Technologies
 * Python 
 * Tensorflow 
 * Pytorch 
 * OpenCV 
-* Flask
-* Heroku 
