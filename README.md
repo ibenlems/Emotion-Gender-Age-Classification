@@ -2,7 +2,7 @@
 
 The folder code has the detector code. \
 The folder models contains the trained models. \
-Notebooks contains the code used to process data, build and train models. \ 
+Notebooks contains the code used to process data, build and train models. 
 
 ## Requirements
 
