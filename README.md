@@ -15,7 +15,7 @@ pip3 install -r requirements.txt
 
 
 ## How to use the application
-* All commands should be executed in terminal in the same directory as this file , be aware to not be in conda environment ``conda deactivate``
+* All commands should be executed in terminal in the same directory as this file , be aware not to be in conda environment ``conda deactivate``
 
 * First execute :
 	
