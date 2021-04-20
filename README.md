@@ -35,3 +35,5 @@ pip3 install -r requirements.txt
 * Tensorflow 
 * Pytorch 
 * OpenCV 
+* Flask
+* Heroku
